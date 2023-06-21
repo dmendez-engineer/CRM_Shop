@@ -1,0 +1,34 @@
+<p>producto works!</p>
+
+<app-header></app-header>
+
+
+<div class="row m-0 vh-100 justify-content-center align-items-center" *ngIf="!timer;else table" >
+  <div class="col-auto text-center"><mat-spinner></mat-spinner></div>
+</div>
+
+
+<ng-template #table>
+
+  <div class="p-2 flex-shrink-1">
+    <a class="btn btn-primary" routerLink="/formProducto" >
+    <mat-icon svgIcon="addCustomer" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+    </a>
+  </div>
+
+<div class="row" *ngFor="let p of productos">
+  <div class="col p-5 rounded-5 shadow-lg mt-5" >
+    <p>Nombre:<span style="font-size: 25px ;"> {{p.nombre}} </span></p>
+    <p>Descripcion: {{p.descripcion}}</p>
+    <p>Precio: {{p.precio | currency}}</p>
+
+    <div class="mr-5">
+      <mat-icon aria-hidden="false"  style="cursor: pointer;"  aria-label="Example home icon">edit</mat-icon>
+    </div>
+    <div>
+      <mat-icon aria-hidden="false" class="" style="cursor: pointer;"  aria-label="Example home icon">delete</mat-icon>
+    </div>
+  </div>
+
+</div>
+</ng-template>

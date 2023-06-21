@@ -1,0 +1,49 @@
+
+<!--<div class="row">
+  <div class="col-2 ">
+
+    <app-side-menu></app-side-menu>
+
+
+  </div>
+</div>-->
+<app-header></app-header>
+<div class="row m-0 vh-100 justify-content-center align-items-center" *ngIf="!timer;else form" >
+  <div class="col-auto text-center"><mat-spinner></mat-spinner></div>
+</div>
+
+<ng-template #form>
+<div class="row"  >
+
+
+  <div class="col" style="">
+
+
+
+        <h1>Manage your CRM</h1>
+        <h3>What will you able to do for</h3>
+
+        <h3 style="margin-top: 50px;">You will be able to do the following things:</h3>
+        <div style="margin-top: 50px;">
+          <ul>
+            <li><p>Managed your costumers</p></li>
+            <li><p>Managed your products</p></li>
+            <li><p>Managed your customers's requests</p></li>
+          </ul>
+      </div>
+
+
+
+  </div>
+  <div class="col" >
+    <img src="../../../assets/crm-26.jpg" width="100%" height="100%"/>
+  </div>
+
+</div>
+<div class="row" style="background-color: gray; padding: 100px; margin-top: 25px;">
+  <div class="col ">
+    <h2>Contact Information</h2>
+  </div>
+</div>
+
+</ng-template>

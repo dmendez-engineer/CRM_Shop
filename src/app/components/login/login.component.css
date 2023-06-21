@@ -1,0 +1,15 @@
+.title{
+ margin-top: 30px;
+ text-align: center;
+}
+.formDiv{
+  display: flex;
+  justify-content: center;
+
+}
+.formDiv2{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+}

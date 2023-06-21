@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatIconRegistry, MatIconModule} from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -7,19 +7,19 @@ const LOG_OUT=`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 
 </svg>
 `;
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent {
+export class HeaderComponent implements OnInit {
 
-  menuAgente:boolean=false;
-
-  title = 'Shop';
-  public constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer){
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIconLiteral('logOut', sanitizer.bypassSecurityTrustHtml(LOG_OUT));
+
   }
 
+  ngOnInit(): void {
+  }
   public logOut():void{
 
   }

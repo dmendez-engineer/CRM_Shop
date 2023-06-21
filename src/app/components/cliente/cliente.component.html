@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+
+<div class="row m-0 vh-100 justify-content-center align-items-center" *ngIf="!timer;else table" >
+  <div class="col-auto text-center"><mat-spinner></mat-spinner></div>
+</div>
+
+
+<ng-template #table>
+<div class="row">
+
+
+  <div class="col">
+    <table class="table mt-5" *ngIf="!add;else form">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Email</th>
+          <th scope="col">Membership started</th>
+          <th>Update</th>
+          <th>Delete</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of customers;let i=index">
+          <td >{{c.id}}</td>
+          <td >{{c.nombre}}</td>
+          <td>{{c.email}}</td>
+          <td>{{c.fechaAlta | date:'fullDate'}}</td>
+          <td><mat-icon aria-hidden="false" style="cursor: pointer;"  (click)="Update(c.id)" aria-label="Example home icon">edit</mat-icon></td>
+          <td><mat-icon aria-hidden="false" style="cursor: pointer;"   aria-label="Example home icon" (click)="delete(c.id)">delete</mat-icon></td>
+        </tr>
+        <tr>
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-2">
+    <div class="d-flex">
+      <div class="p-2 w-100"></div>
+      <div class="p-2 flex-shrink-1"><button class="btn btn-primary" *ngIf="!add===true" (click)="addCostumer()">
+        <mat-icon svgIcon="addCustomer" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon></button>
+        <button class="btn btn-primary" (click)="addCostumer()" *ngIf="add===true">
+          <mat-icon svgIcon="backPage" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</ng-template>
+
+
+
+<ng-template #form>
+
+  <app-formulario [add]="add" [customerSelected]="customerSelected" (changeAdd)="receiveData($event)" ></app-formulario>
+
+</ng-template>
+
+
+

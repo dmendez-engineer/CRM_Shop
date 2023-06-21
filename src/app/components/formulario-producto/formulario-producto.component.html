@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="row mt-lg-5">
+  <h1>Please fill the form below out!</h1>
+<div class="col shadow-lg p-5 mb-5 bg-body-secondary rounded">
+
+  <form [formGroup]="formProducto" (ngSubmit)="saveChanges()" >
+
+
+
+    <div class="form-group">
+
+      <!--<input type="text" formControlName="name" class="form-control" id="exampleInputEmail1"
+        aria-describedby="emailHelp" placeholder="Enter email">-->
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Ex. Daniel Méndez"  value="Sushi"
+          formControlName="name"
+          >
+        </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Price" type="numeric" value="Sushi"
+        formControlName="price"
+        >
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="" value="Sushi"
+        formControlName="description"></textarea>
+      </mat-form-field>
+
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+
+</div>
+</div>
