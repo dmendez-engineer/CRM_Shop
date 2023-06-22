@@ -11,8 +11,8 @@
 <ng-template #table>
 
   <div class="p-2 flex-shrink-1">
-    <a class="btn btn-primary" routerLink="/formProducto" >
-    <mat-icon svgIcon="addCustomer" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
+    <a class="btn btn-primary w-auto" routerLink="/formProducto" >
+    <mat-icon svgIcon="addProduct" aria-hidden="false" aria-label="Example thumbs up SVG icon"></mat-icon>
     </a>
   </div>
 
@@ -23,10 +23,10 @@
     <p>Precio: {{p.precio | currency}}</p>
 
     <div class="mr-5">
-      <mat-icon aria-hidden="false"  style="cursor: pointer;"  aria-label="Example home icon">edit</mat-icon>
+      <mat-icon aria-hidden="false"  style="cursor: pointer;" routerLink="/formProductoEdit/{{p.id}}"  aria-label="Example home icon">edit</mat-icon>
     </div>
     <div>
-      <mat-icon aria-hidden="false" class="" style="cursor: pointer;"  aria-label="Example home icon">delete</mat-icon>
+      <mat-icon aria-hidden="false" class="" style="cursor: pointer;"  aria-label="Example home icon" (click)="delete(p.id)" >delete</mat-icon>
     </div>
   </div>
 

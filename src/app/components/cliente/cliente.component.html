@@ -20,6 +20,7 @@
           <th scope="col">Membership started</th>
           <th>Update</th>
           <th>Delete</th>
+          <th>Requests</th>
 
         </tr>
       </thead>
@@ -31,6 +32,7 @@
           <td>{{c.fechaAlta | date:'fullDate'}}</td>
           <td><mat-icon aria-hidden="false" style="cursor: pointer;"  (click)="Update(c.id)" aria-label="Example home icon">edit</mat-icon></td>
           <td><mat-icon aria-hidden="false" style="cursor: pointer;"   aria-label="Example home icon" (click)="delete(c.id)">delete</mat-icon></td>
+          <td><a routerLink="/pedidos/{{c.id}}">See more details</a></td>
         </tr>
         <tr>
 

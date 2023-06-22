@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,Route, ActivatedRoute } from '@angular/router';
+import { Requests } from 'src/app/interface/request.interface';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-pedido',
@@ -8,10 +10,15 @@ import { Router,Route, ActivatedRoute } from '@angular/router';
 })
 export class PedidoComponent implements OnInit {
 
-  constructor(private router:ActivatedRoute) { }
+  public request:Requests[]=[];
+  constructor(private router:ActivatedRoute,private serviceRequest:RequestService) { }
 
   ngOnInit(): void {
-    console.log(this.router);
+    console.log(this.router.snapshot.params["id"]);
+
+    this.serviceRequest.getRequest(this.router.snapshot.params["id"]).subscribe(res=>{
+      console.log("Request in Frontend: ",res);
+    });
   }
 
 }
