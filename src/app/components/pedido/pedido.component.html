@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<div *ngIf="requestObject[0].name_Customer!==null; else noDataShow">
+
 <h1 class="header">Requests of {{requestObject[0].name_Customer}}</h1>
 
 
@@ -13,5 +15,8 @@
 </div>
 
 <h1 class="totalAmount">Total: {{requestObject[0].total}}</h1>
+</div>
 
-
+<ng-template #noDataShow>
+  <h1>No data to show</h1>
+</ng-template>
