@@ -1,0 +1,17 @@
+.request{
+  padding: 10px;
+  background-color: grey;
+  border-radius: 20px;
+}
+h1{
+  color: white;
+  font-style: inherit;
+}
+p{
+  font-size: 25px;
+  color:white;
+}
+.totalAmount,.header{
+  color: black;
+
+}

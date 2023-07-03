@@ -1,1 +1,17 @@
-<p>pedido works!</p>
+<app-header></app-header>
+
+<h1 class="header">Requests of {{requestObject[0].name_Customer}}</h1>
+
+
+<div class="request mb-5" *ngFor="let r of requestObject;">
+  <h1>Product:  {{r.name_Product}}</h1>
+  <p>Quantity: {{r.cantidad}}</p>
+  <p>Unit price: {{r.unit_Price}}</p>
+
+  <p>Subtotal: {{r.unit_Price * r.cantidad}} </p>
+
+</div>
+
+<h1 class="totalAmount">Total: {{requestObject[0].total}}</h1>
+
+
