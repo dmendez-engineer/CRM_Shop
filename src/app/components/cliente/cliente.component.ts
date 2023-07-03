@@ -2,6 +2,7 @@ import { Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@an
 import { CostumerService } from 'src/app/services/costumer.service';
 import { Costumer, CustomerProof } from 'src/app/interface/costumer.interface';
 import Swal from 'sweetalert2';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-cliente',
@@ -14,14 +15,16 @@ export class ClienteComponent implements OnInit,OnChanges {
   public timer:boolean=false;
   customers!:CustomerProof[];
   customerSelected:CustomerProof={};
-
+  dataSource:any;
+  displayedColumns: string[] = ['demo-name', 'demo-email', 'demo-date'];
   constructor(private service:CostumerService) { }
 
 
   ngOnInit(): void {
-    console.log("Cliente: ngOnInit");
+
     this.service.GetAllCustomers().subscribe(customers=>{
       this.customers=customers;
+      this.dataSource= new MatTableDataSource(this.customers);
 
     });
     setTimeout(() => {
@@ -32,6 +35,19 @@ export class ClienteComponent implements OnInit,OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("NgOnChanges",this.add);
+  }
+  public filter2(event:Event){
+    const letter=(event.target as HTMLInputElement).value;
+    console.log(letter);
+    const customerFiltered=this.customers.filter(c=>c.nombre?.includes("k"));
+    console.log("Filter: ",customerFiltered);
+    this.customers=customerFiltered;
+  }
+  public filter(event:Event){
+
+    const letter=(event.target as HTMLInputElement).value;
+    this.dataSource.filter=letter.trim().toLowerCase();
+
   }
   public addCostumer():void{
     this.add=!this.add;

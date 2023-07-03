@@ -11,6 +11,7 @@
 
 
   <div class="col">
+
     <table class="table mt-5" *ngIf="!add;else form">
       <thead>
         <tr>
@@ -39,6 +40,38 @@
         </tr>
       </tbody>
     </table>
+    <!--
+    <hr/>
+    <mat-form-field>
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="filter($event)" placeholder="buscar">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <ng-container matColumnDef="demo-name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="demo-email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="demo-date">
+        <th mat-header-cell *matHeaderCellDef> Membership started. </th>
+        <td mat-cell *matCellDef="let element"> {{element.fechaAlta}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+-->
+
+
+
   </div>
   <div class="col-2">
     <div class="d-flex">

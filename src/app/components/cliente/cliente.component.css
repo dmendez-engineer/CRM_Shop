@@ -1,0 +1,20 @@
+.demo-table {
+  width: 100%;
+}
+
+.mat-column-demo-name {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+.mat-column-demo-email {
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+.mat-column-demo-date {
+  font-style: italic;
+}
+

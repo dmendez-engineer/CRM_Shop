@@ -21,7 +21,7 @@ export class PedidoComponent implements OnInit {
     this.serviceRequest.getRequest(this.router.snapshot.params["id"]).subscribe(res=>{
      // this.customerSelected=res;
      this.requestObject=res;
-      console.log("RequestObject: ",this.requestObject);
+
 
 
     });

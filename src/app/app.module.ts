@@ -30,9 +30,9 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatTableModule} from '@angular/material/table';
-//import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-//import { ToastrModule } from 'ngx-toastr';
+import {MatTableModule,MatTableDataSource} from '@angular/material/table';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +64,9 @@ import {MatTableModule} from '@angular/material/table';
     NgIf,
     MatFormFieldModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+
+
    /* ToastrModule,
     BrowserAnimationsModule*/
   ],
